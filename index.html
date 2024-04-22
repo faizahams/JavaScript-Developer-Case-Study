@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Location Pinning System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+  <!-- Header Section -->
+    <h1>Customer Location Pinning System</h1>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+<!-- Customer Form Section -->
+    <form id="customerForm" onsubmit="return validateForm()">
+      <!-- Form Fields -->
+        <label for="customerName">Name:</label>
+        <input type="text" id="customerName" name="customerName" placeholder="Enter customer name...">
+
+        <label for="customerAddress">Location:</label>
+        <input type="text" id="customerAddress" name="customerAddress" placeholder="Pin a location on the map" readonly>
+
+        <label for="customerPhoneNumber">Phone Number:</label>
+        <input type="tel" id="customerPhoneNumber" name="customerPhoneNumber" placeholder="Enter customer phone number...">
+
+        <label for="customerEmail">Email:</label>
+        <input type="email" id="customerEmail" name="customerEmail" placeholder="Enter customer email address...">
+
+        <input type="submit" value="Add Customer">
+        <div id="errorMessages" class="error-message"></div>
+    </form>
+<!-- Google Maps API script -->
+<script async defer crossorigin="anonymous" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChQ_3i759-6sKzi9IS58Vk4nr9mL7Q5zU&libraries=geometry&callback=initMap"></script>
+    <!-- Custom script -->
+    <script src="script.js"></script>
+</body>
+</html>
